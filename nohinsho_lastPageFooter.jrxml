@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nohinsho" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="18f83b1f-95d9-4336-a982-f603cb6c4483">
+    <property name="ireport.background.image" value="C:\Users\yusuke\Desktop\senyoseikyu\20130509112955_00001.jpg"/>
+    <property name="ireport.zoom" value="2.0"/>
+    <property name="ireport.x" value="775"/>
+    <property name="ireport.y" value="1675"/>
+    <property name="ireport.background.image.properties" value="true,true,0.25,-7,-9,0,0,858,611"/>
+    <style name="JapaneseFontStyle" fontName="ＭＳ Ｐ明朝" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H"/>
+    <queryString>
+		<![CDATA[]]>
+    </queryString>
+    <field name="branch_cd" class="java.lang.String"/>
+    <field name="invoice_date" class="java.lang.String"/>
+    <field name="customer_cd" class="java.lang.String"/>
+    <field name="page_no" class="java.lang.Integer"/>
+    <field name="line_no" class="java.lang.Integer"/>
+    <field name="page_count" class="java.lang.Integer"/>
+    <field name="Date" class="java.lang.String"/>
+    <field name="sales_no" class="java.lang.String"/>
+    <field name="slip_classfied" class="java.lang.String"/>
+    <field name="item_cd" class="java.lang.String"/>
+    <field name="item_name1" class="java.lang.String"/>
+    <field name="item_name2" class="java.lang.String"/>
+    <field name="special_price_classfied" class="java.lang.String"/>
+    <field name="amount" class="java.lang.Integer"/>
+    <field name="unit" class="java.lang.String"/>
+    <field name="price" class="java.lang.Integer"/>
+    <field name="total" class="java.lang.Integer"/>
+    <field name="discount_amount" class="java.lang.Integer"/>
+    <field name="discount_rate" class="java.lang.String"/>
+    <field name="remark" class="java.lang.String"/>
+    <field name="input_cd" class="java.lang.String"/>
+    <field name="customer_name" class="java.lang.String"/>
+    <field name="postalcode" class="java.lang.String"/>
+    <field name="address1" class="java.lang.String"/>
+    <field name="address2" class="java.lang.String"/>
+    <field name="tel" class="java.lang.String"/>
+    <field name="fax" class="java.lang.String"/>
+    <variable name="total_1" class="java.lang.Integer" calculation="Sum">
+        <variableExpression><![CDATA[$F{total}]]></variableExpression>
+    </variable>
+    <background>
+        <band height="555" splitType="Stretch">
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="6667a598-9bf7-444a-abda-3b6051cd679c" x="25" y="385" width="39" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="96d4fd76-52fc-4426-bbb2-bfdbdd98ecf5" x="64" y="385" width="290" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="8d1fdfbf-0a4e-46ed-95ab-91df757d9e4e" x="354" y="385" width="52" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="ea05ea71-ccc2-4278-98f7-257cfbe1dc66" x="406" y="385" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="bd71383e-3568-49b9-b086-89fb55635c35" x="461" y="385" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="133795ec-1f2d-4416-b98f-562069d7ceac" x="516" y="385" width="70" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="be0a3039-ddf9-45bc-a0a4-8d51898b189b" x="25" y="398" width="39" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="473d4878-ef78-4b3a-a30e-05a11605d8d7" x="64" y="398" width="290" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="1c7b87c4-9c21-4578-85bf-5465f65353c8" x="354" y="398" width="52" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="e1540148-595d-44db-810e-88523e31e166" x="406" y="398" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="281ccf98-cc40-4604-8ca5-c29d4c74b012" x="461" y="398" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="bed8da66-ccb9-45ca-9d99-2b76a549e312" x="516" y="398" width="70" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="c751a3a3-fda9-4d6c-8a81-dacc76e4fcdd" x="25" y="411" width="39" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="0f2f5e32-2636-4c73-bb24-dd424c400d64" x="64" y="411" width="290" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="59614b36-f255-46a2-900f-005e43fd7ac6" x="354" y="411" width="52" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="dd4df489-8160-404a-8f85-34951dba2fd7" x="406" y="411" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="b649a509-486d-46d2-9a46-d3aea2d8440a" x="461" y="411" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="530779e2-d279-46a0-912e-c452491954b4" x="516" y="411" width="70" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="ce2c6942-ac2c-4f4b-b4f5-017b6beb0122" x="25" y="424" width="39" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="39e3cd01-3651-4a28-9abc-912395775318" x="64" y="424" width="290" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="af9125aa-1d09-4f44-af9d-91adcebea923" x="354" y="424" width="52" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="e48be689-13f6-4b51-b7bb-df78eb31ba27" x="406" y="424" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="407b1b31-c376-4221-938e-187b70a7a362" x="461" y="424" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="be6d6727-ce4a-458b-b28b-1ab7b85a8388" x="516" y="424" width="70" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="66a4bbe2-bdbe-4ea3-ab7f-9674446a5a74" x="25" y="437" width="39" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="f9b908a4-bf4f-429b-833a-494a7fc6270e" x="64" y="437" width="290" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="644e0cd5-4c47-4d81-8af0-48daabe6c9cd" x="354" y="437" width="52" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="c81dab56-d7d9-4342-9aeb-47ddffaac6e3" x="406" y="437" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="4f953142-6d59-4216-8893-74084fa407e7" x="461" y="437" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="4976a633-a28b-41a7-99a9-34458e6596ef" x="516" y="437" width="70" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="d38dac2d-613c-4c5b-81f7-3faf255e72b2" x="25" y="450" width="39" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="3a24d667-9116-45c2-a258-0c052bd5b15a" x="64" y="450" width="290" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="fae1d086-bcaf-448c-b4d0-d06e96346113" x="354" y="450" width="52" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="393369a1-653a-4598-b381-5c4a477d1fd2" x="406" y="450" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="f65bc7e0-af26-4ca9-89b1-6b74927267e0" x="461" y="450" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="a327024d-9be1-4b9f-a4bd-65cff59ed7d4" x="516" y="450" width="70" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="45031485-4edc-4570-86d4-e4eb3a294ae2" x="64" y="463" width="290" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="a9fdad46-9953-4656-99de-d21d4e90c091" x="354" y="463" width="52" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="b9affe33-0d9b-4592-8af8-098a4c4be5b0" x="516" y="463" width="70" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="92acfd89-f000-4fce-aebf-fd18d7184b8b" x="406" y="463" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="f0737e82-64eb-4363-8fb9-5a33628fc852" x="461" y="463" width="55" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="29289265-a5a3-45d6-b4bb-d45bee93952d" x="25" y="463" width="39" height="13"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <elementGroup>
+                <rectangle>
+                    <reportElement uuid="51884fa3-c59b-4f19-ab2f-bfb55481974c" x="64" y="476" width="290" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="2cbdbcb8-65e8-4003-a3cb-433308bbc292" x="354" y="476" width="52" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="01164869-6ecc-4c5b-96b7-e5895a3f80b8" x="516" y="476" width="70" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="b90e929d-3fd9-4f2a-8f8d-1743f69f58d6" x="406" y="476" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="441066a7-acf8-45bc-9812-60dd5f6e1f2c" x="461" y="476" width="55" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+                <rectangle>
+                    <reportElement uuid="bd99b12c-f163-499c-b3a5-92fe58ef1a45" x="25" y="476" width="39" height="13" backcolor="#CCCCCC"/>
+                    <graphicElement>
+                        <pen lineWidth="0.25"/>
+                    </graphicElement>
+                </rectangle>
+            </elementGroup>
+            <rectangle radius="10">
+                <reportElement uuid="dbf1d07a-ea0f-4512-98e6-028254b7dfa3" mode="Transparent" x="25" y="372" width="561" height="161"/>
+                <graphicElement>
+                    <pen lineWidth="1.25"/>
+                </graphicElement>
+            </rectangle>
+        </band>
+    </background>
+    <pageHeader>
+        <band height="385" splitType="Stretch">
+            <staticText>
+                <reportElement uuid="6ab6fb74-4aac-4134-92ee-128ed3f655dc" style="JapaneseFontStyle" x="261" y="252" width="76" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="18" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[納品書]]></text>
+            </staticText>
+            <textField>
+                <reportElement uuid="0913c90d-9457-4d3c-9a6d-a82035a848a1" style="JapaneseFontStyle" x="75" y="288" width="90" height="14"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["〒"+$F{postalcode}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="318d140c-197d-4548-bdf7-843ebce6bfb9" style="JapaneseFontStyle" x="75" y="303" width="235" height="26"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{address1}.trim()+$F{address2}.trim()]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="d167ddb3-e41a-4ace-870b-a3a6962c9524" style="JapaneseFontStyle" x="164" y="354" width="76" height="13"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{customer_cd}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="2af15f4f-9b3e-4733-b643-ee07d7f479ee" style="JapaneseFontStyle" x="75" y="331" width="199" height="20"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{customer_name}.trim()+"様"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="cf240cb2-1f96-4d3d-a886-ab6080174a22" style="JapaneseFontStyle" x="430" y="318" width="100" height="20"/>
+                <textElement>
+                    <font size="14" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[丸喜株式会社]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="a74a1f17-f080-4f9c-9c05-a8b884ed925b" style="JapaneseFontStyle" x="392" y="341" width="190" height="30"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[京都市中京区室町通丸太町下る道場町20
+TEL 075-241-3168]]></text>
+            </staticText>
+            <textField>
+                <reportElement uuid="0af32348-9e61-4598-b106-d701ef8bc9cd" style="JapaneseFontStyle" x="348" y="262" width="93" height="20"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["("+$F{slip_classfied}+")"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="cc7364d8-0f3c-434a-88ce-a69511a81369" style="JapaneseFontStyle" x="482" y="262" width="100" height="20"/>
+                <textElement textAlignment="Right">
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["伝票no."+$F{sales_no}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="7d6fe292-e84f-4d42-8eb0-46e6a9252588" style="JapaneseFontStyle" x="282" y="351" width="100" height="20"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{invoice_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="c223936a-9ce8-4b9c-b009-a794a447ebfa" x="482" y="282" width="59" height="20"/>
+                <textElement textAlignment="Right">
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement uuid="8988c60b-19be-4d1e-8f3d-e047aa89c787" x="541" y="282" width="40" height="20"/>
+                <textElement>
+                    <font pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="07d80d15-055c-4b58-b18a-e87d090eca97" x="25" y="372" width="39" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[品番	]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="2ba171a0-5630-4ab8-9f5c-ae37de534a66" x="64" y="372" width="290" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[品名]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="deacc124-14ae-4007-a3d4-5c0ad78a2e5b" x="354" y="372" width="52" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[数量]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="3fcf108d-0468-4d28-a05c-ae98b8553891" x="406" y="372" width="55" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[単価]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="14eefc69-2bab-4b92-a095-931bed478651" x="461" y="372" width="55" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[金額]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="3a929c24-3f62-4754-a9af-81df98e5e802" x="516" y="372" width="70" height="13"/>
+                <box>
+                    <leftPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[備考]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <detail>
+        <band height="13" splitType="Stretch">
+            <textField>
+                <reportElement uuid="b83c4380-a39d-407e-999f-ecfbd79b590f" x="25" y="0" width="39" height="13"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_cd}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="7cc41a26-ac83-42b1-8579-94edafe1fe0d" x="64" y="0" width="290" height="13"/>
+                <textElement>
+                    <font fontName="ＭＳ Ｐ明朝" size="8" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{item_name1}.trim()+$F{item_name2}.trim()]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="9d7b95fd-4d8a-47b9-aaed-f6e51c762dd4" x="354" y="0" width="39" height="13"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="e33b9ec0-f541-41cf-8092-2bc6610fd7d0" x="393" y="0" width="13" height="13"/>
+                <textElement textAlignment="Center">
+                    <font fontName="ＭＳ Ｐ明朝" size="8" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0">
+                <reportElement uuid="97a461cd-45dd-4dda-bfdc-ead830c871e0" x="406" y="0" width="55" height="13"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0">
+                <reportElement uuid="21a78343-c159-40a3-b912-17c1ae7183f0" x="461" y="0" width="55" height="13"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" size="10" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement uuid="fc72e56b-8c20-461c-9390-78911fce5a9f" x="516" y="0" width="70" height="13"/>
+                <textElement>
+                    <font fontName="ＭＳ Ｐ明朝" size="8" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="66" splitType="Stretch">
+            <staticText>
+                <reportElement uuid="a58c5ac4-926d-463d-ac2f-cf787fb7c817" x="25" y="0" width="27" height="11"/>
+                <textElement>
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[(摘要)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="ed4e42cb-7187-4a44-9047-dc8672b819aa" x="354" y="22" width="52" height="11"/>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[********]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="1c7f6fa7-e4a3-41e6-8779-eeef3241522e" x="354" y="11" width="52" height="11"/>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[課税対象額]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="f0e90195-4b4d-4e9f-89ba-169dd3f03e2a" x="406" y="0" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[小計]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="57201667-1d97-4f51-8d43-64439cc21c10" x="406" y="11" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[消費税]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="037eaadc-8043-4178-bcaf-4b4b5c23d818" x="406" y="22" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[合計]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="c3fc9fc1-c2f1-4ea3-8686-f336bb2da447" x="461" y="0" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[********]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="9eba498b-ad29-483f-99a7-869288873109" x="461" y="11" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[********]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="4caeedf6-7ced-4724-a79f-e414a7cdc671" x="461" y="22" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-HW-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[********]]></text>
+            </staticText>
+        </band>
+    </pageFooter>
+    <lastPageFooter>
+        <band height="66">
+            <textField pattern="#,##0">
+                <reportElement uuid="8689ca29-bafb-493c-ba2f-12dd49f92437" x="461" y="0" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{total_1}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0">
+                <reportElement uuid="09ea72f7-b3cf-4eb3-8b98-94927feb8263" x="461" y="11" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{total_1}*0.05]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0">
+                <reportElement uuid="bc6b8f6f-0e74-4c0d-aa0b-08b10b0984c4" x="461" y="22" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{total_1}*1.05]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="8196e72e-bf43-4402-bbdf-d9145cd52b60" x="406" y="11" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[消費税]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="8ec966fa-478c-43ed-b2b7-a263d875eec9" x="354" y="11" width="52" height="11"/>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[課税対象額]]></text>
+            </staticText>
+            <textField pattern="#,##0">
+                <reportElement uuid="70da18c1-220c-4841-a0d6-72d7a7275b21" x="354" y="22" width="52" height="11"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{total_1}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="4799b00f-50e4-4ee3-acde-f1bd6a38ba8f" x="406" y="0" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[小計]]></text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="6cdde53e-b4b7-4951-85a4-a430ad2b587d" x="406" y="22" width="55" height="11"/>
+                <box>
+                    <topPen lineWidth="0.25"/>
+                    <leftPen lineWidth="0.25"/>
+                    <bottomPen lineWidth="0.25"/>
+                    <rightPen lineWidth="0.25"/>
+                </box>
+                <textElement textAlignment="Right" markup="none">
+                    <font fontName="ＭＳ Ｐ明朝" pdfFontName="HeiseiMin-W3" pdfEncoding="UniJIS-UCS2-H" isPdfEmbedded="true"/>
+                </textElement>
+                <text><![CDATA[合計]]></text>
+            </staticText>
+        </band>
+    </lastPageFooter>
+</jasperReport>
