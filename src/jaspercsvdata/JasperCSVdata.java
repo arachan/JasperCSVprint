@@ -29,9 +29,6 @@ import net.sf.jasperreports.engine.export.JRPrintServiceExporterParameter;
  */
 public class JasperCSVdata {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
                 
         //JRXMLファイル
