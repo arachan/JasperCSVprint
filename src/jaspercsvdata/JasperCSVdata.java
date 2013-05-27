@@ -1,12 +1,16 @@
 package jaspercsvdata;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Properties;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.HashPrintServiceAttributeSet;
+import javax.print.attribute.standard.Media;
 import javax.print.attribute.standard.MediaTray;
 import javax.print.attribute.standard.PrinterName;
 import net.sf.jasperreports.engine.JRException;
@@ -25,22 +29,35 @@ import net.sf.jasperreports.engine.export.JRPrintServiceExporterParameter;
  * @author yusuke
  *
  * JRXMLとcsvデータを取り込んでプリンタに出力するプログラム
- *
+ * 
+ * args[0] jrxmlファイル名と出力PDFファイル名
+ * args[1] csvデータファイル
+ * args[2] プリンタ設定プロパティ
  */
 public class JasperCSVdata {
 
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
                 
         //JRXMLファイル
-        File jrxmlFile = new File(get_currentpath()+"nohinsho_lastPageFooter.jrxml");
-
+        //File jrxmlFile = new File(get_currentpath()+"nohinsho_lastPageFooter.jrxml");
+        File jrxmlFile = new File(get_currentpath()+args[0]+"jrxml");
         //PDFファイルの出力先
-        File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
+//        File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
+        File pdfFile = new File(get_currentpath()+args[0]+".pdf");
 
         //CSVデータソース
-        File csvFile = new File(get_currentpath()+"outfile_n.csv");
+        //File csvFile = new File(get_currentpath()+"outfile_n.csv");
+        File csvFile = new File(get_currentpath()+args[1]+".csv");
 
-        try {     
+        //Printer設定プロパティf
+        Properties printer_settings=new Properties();
+                
+        try {
+            
+            //Printer設定の読み込み
+            printer_settings.loadFromXML(new FileInputStream(args[2]));
+            
             
             //JRXMLファイルのコンパイル 1
             JasperReport jasperReport = JasperCompileManager.compileReport(jrxmlFile.getAbsolutePath());
@@ -66,11 +83,12 @@ public class JasperCSVdata {
 
             ///印刷プリンタをプリンタ名で指定
             HashPrintServiceAttributeSet printAttribute = new HashPrintServiceAttributeSet();
-            printAttribute.add(new PrinterName("Canon LBP3800 LIPSLX", Locale.JAPAN));
-
+          //printAttribute.add(new PrinterName("Canon LBP3800 LIPSLX", Locale.JAPAN));//
+            printAttribute.add(new PrinterName(printer_settings.getProperty("PrinterName"), Locale.JAPAN));
             //用紙設定等
             HashPrintRequestAttributeSet printRequestAttribute = new HashPrintRequestAttributeSet();
-            printRequestAttribute.add(MediaTray.MIDDLE);
+            //printRequestAttribute.add(MediaTray.MIDDLE);
+            //printRequestAttribute.add(printer_settings.getProperty("MediaTray"));
             //printRequestAttribute.add(MediaSizeName.ISO_A4); //MediaTrayとMediaSizeNameは共存できません。
 
             exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printAttribute);
