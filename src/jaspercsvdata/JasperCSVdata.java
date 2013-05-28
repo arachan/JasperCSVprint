@@ -52,6 +52,7 @@ public class JasperCSVdata {
 
         //Printer設定プロパティf
         Properties printer_settings=new Properties();
+        
                 
         try {
             
@@ -127,7 +128,11 @@ public class JasperCSVdata {
      
      private static MediaTray getTray(String trayname){
  
-         
+         //TODO ここでトレイを選ぶ処理を書く
+         /*
+          * 簡単なのはswitch case だけどダサいよね。
+          *  
+          */
          
          
          return MediaTray.MIDDLE;
