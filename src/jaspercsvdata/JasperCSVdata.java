@@ -41,6 +41,10 @@ public class JasperCSVdata {
         //JRXMLファイル
         //File jrxmlFile = new File(get_currentpath()+"nohinsho_lastPageFooter.jrxml");
         File jrxmlFile = new File(get_currentpath()+args[0]+".jrxml");
+        
+        //Jasperファイル 印刷が遅いと言われたときの対策
+        //String jasperReport=get_currentpath()+args[0]+".jasper";
+                
         //PDFファイルの出力先
 //        File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
         File pdfFile = new File(get_currentpath()+args[0]+".pdf");
