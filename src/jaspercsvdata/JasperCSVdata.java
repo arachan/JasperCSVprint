@@ -57,7 +57,7 @@ public class JasperCSVdata {
         try {
             
             //Printer設定の読み込み
-            printer_settings.loadFromXML(new FileInputStream(args[2]));
+            printer_settings.loadFromXML(new FileInputStream(get_currentpath()+args[2]+".xml"));
             
             
             //JRXMLファイルのコンパイル 1
@@ -84,12 +84,12 @@ public class JasperCSVdata {
 
             ///印刷プリンタをプリンタ名で指定
             HashPrintServiceAttributeSet printAttribute = new HashPrintServiceAttributeSet();
-          //printAttribute.add(new PrinterName("Canon LBP3800 LIPSLX", Locale.JAPAN));//
-            printAttribute.add(new PrinterName(printer_settings.getProperty("PrinterName"), Locale.JAPAN));
+            printAttribute.add(new PrinterName("Canon LBP3800 LIPSLX", Locale.JAPAN));//
+            //printAttribute.add(new PrinterName(printer_settings.getProperty("PrinterName"), Locale.JAPAN));
             //用紙設定等
             HashPrintRequestAttributeSet printRequestAttribute = new HashPrintRequestAttributeSet();
-            printRequestAttribute.add(getTray(printer_settings.getProperty("MediaTray")));
-            //printRequestAttribute.add(printer_settings.getProperty("MediaTray"));
+            //printRequestAttribute.add(getTray(printer_settings.getProperty("MediaTray")));
+            printRequestAttribute.add(MediaTray.MIDDLE);
             //printRequestAttribute.add(MediaSizeName.ISO_A4); //MediaTrayとMediaSizeNameは共存できません。
 
             exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE_ATTRIBUTE_SET, printAttribute);
