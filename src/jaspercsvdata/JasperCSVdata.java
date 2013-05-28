@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Properties;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.HashPrintServiceAttributeSet;
-import javax.print.attribute.standard.Media;
 import javax.print.attribute.standard.MediaTray;
 import javax.print.attribute.standard.PrinterName;
 import net.sf.jasperreports.engine.JRException;
@@ -128,14 +127,29 @@ public class JasperCSVdata {
      
      private static MediaTray getTray(String trayname){
  
-         //TODO ここでトレイを選ぶ処理を書く
          /*
-          * 簡単なのはswitch case だけどダサいよね。
-          *  
+          * Trayを選ぶ処理
           */
-         
-         
-         return MediaTray.MIDDLE;
+         switch (trayname){
+             case "MediaTray.BOTTOM":
+                 return MediaTray.BOTTOM;
+             case "MediaTray.ENVELOPE":
+                 return MediaTray.ENVELOPE;
+             case "MediaTray.LAEGE_CAPACITY":
+                     return MediaTray.LARGE_CAPACITY;
+             case "MediaTray.MAIN":
+                 return MediaTray.MAIN;
+             case "MediaTray.MANUAL":
+                 return MediaTray.MANUAL;
+             case "MediaTray.MIDDLE":
+                 return MediaTray.MIDDLE;
+             case "MediaTray.SIDE":
+                  return MediaTray.SIDE;
+             case "MediaTray.TOP":
+                 return MediaTray.TOP;
+             default:
+                 return null;
+         }
      }
      
 }
