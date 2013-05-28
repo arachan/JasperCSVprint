@@ -41,7 +41,7 @@ public class JasperCSVdata {
                 
         //JRXMLファイル
         //File jrxmlFile = new File(get_currentpath()+"nohinsho_lastPageFooter.jrxml");
-        File jrxmlFile = new File(get_currentpath()+args[0]+"jrxml");
+        File jrxmlFile = new File(get_currentpath()+args[0]+".jrxml");
         //PDFファイルの出力先
 //        File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
         File pdfFile = new File(get_currentpath()+args[0]+".pdf");
@@ -87,7 +87,7 @@ public class JasperCSVdata {
             printAttribute.add(new PrinterName(printer_settings.getProperty("PrinterName"), Locale.JAPAN));
             //用紙設定等
             HashPrintRequestAttributeSet printRequestAttribute = new HashPrintRequestAttributeSet();
-            //printRequestAttribute.add(MediaTray.MIDDLE);
+            printRequestAttribute.add(getTray(printer_settings.getProperty("MediaTray")));
             //printRequestAttribute.add(printer_settings.getProperty("MediaTray"));
             //printRequestAttribute.add(MediaSizeName.ISO_A4); //MediaTrayとMediaSizeNameは共存できません。
 
@@ -124,4 +124,13 @@ public class JasperCSVdata {
 	return acp.substring(0,p);
 
     }
+     
+     private static MediaTray getTray(String trayname){
+ 
+         
+         
+         
+         return MediaTray.MIDDLE;
+     }
+     
 }
