@@ -47,7 +47,7 @@ public class JasperCSVdata {
         //String jasperReport=get_currentpath()+args[0]+".jasper";
                 
         //PDFファイルの出力先
-//        File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
+        //  File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
         File pdfFile = new File(get_currentpath()+args[0]+".pdf");
 
         //CSVデータソース
