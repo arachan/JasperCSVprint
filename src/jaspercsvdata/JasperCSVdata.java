@@ -94,7 +94,7 @@ public class JasperCSVdata {
             //用紙設定等
             HashPrintRequestAttributeSet printRequestAttribute = new HashPrintRequestAttributeSet();
             printRequestAttribute.add(getTray(printer_settings.getProperty("MediaTray")));
-            printRequestAttribute.add(new Copies(new Integer("3")));
+            printRequestAttribute.add(new Copies(new Integer(printer_settings.getProperty("Copies"))));
             printRequestAttribute.add(SheetCollate.COLLATED);
             //printRequestAttribute.add(MediaTray.MIDDLE);
             //printRequestAttribute.add(MediaSizeName.ISO_A4); //MediaTrayとMediaSizeNameは共存できません。
