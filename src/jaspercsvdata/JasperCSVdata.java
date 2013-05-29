@@ -13,6 +13,7 @@ import javax.print.attribute.HashPrintServiceAttributeSet;
 import javax.print.attribute.standard.Copies;
 import javax.print.attribute.standard.MediaTray;
 import javax.print.attribute.standard.PrinterName;
+import javax.print.attribute.standard.SheetCollate;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -94,6 +95,7 @@ public class JasperCSVdata {
             HashPrintRequestAttributeSet printRequestAttribute = new HashPrintRequestAttributeSet();
             printRequestAttribute.add(getTray(printer_settings.getProperty("MediaTray")));
             printRequestAttribute.add(new Copies(new Integer("3")));
+            printRequestAttribute.add(SheetCollate.COLLATED);
             //printRequestAttribute.add(MediaTray.MIDDLE);
             //printRequestAttribute.add(MediaSizeName.ISO_A4); //MediaTrayとMediaSizeNameは共存できません。
 
