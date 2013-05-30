@@ -42,10 +42,10 @@ public class JasperCSVdata {
                 
         //JRXMLファイル
         //File jrxmlFile = new File(get_currentpath()+"nohinsho_lastPageFooter.jrxml");
-        File jrxmlFile = new File(get_currentpath()+args[0]+".jrxml");
+        //File jrxmlFile = new File(get_currentpath()+args[0]+".jrxml");
         
         //Jasperファイル 印刷が遅いと言われたときの対策
-        //String jasperReport=get_currentpath()+args[0]+".jasper";
+        String jasperReport=get_currentpath()+args[0]+".jasper";
                 
         //PDFファイルの出力先
         //  File pdfFile = new File(get_currentpath()+"nohinsho.pdf");
@@ -66,7 +66,7 @@ public class JasperCSVdata {
             
             
             //JRXMLファイルのコンパイル 1
-            JasperReport jasperReport = JasperCompileManager.compileReport(jrxmlFile.getAbsolutePath());
+            //JasperReport jasperReport = JasperCompileManager.compileReport(jrxmlFile.getAbsolutePath());
 
             //パラメータの生成
             Map<String, Object> paramMap = new HashMap<String, Object>();
