@@ -74,7 +74,12 @@ public class JasperCSVdata {
             //データソースの生成
             JRCsvDataSource ds = new JRCsvDataSource(csvFile.getAbsolutePath(), "MS932");
             ds.setUseFirstRowAsHeader(true); //1行目をカラムヘッダーとして扱う
-
+            
+            //commaかtabかの判別
+            if(printer_settings.getProperty("setFieldDelimiter").equals("tab")){
+                ds.setFieldDelimiter('\t');
+            }             
+                   
             //データの動的バインド
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, paramMap, ds);
 
@@ -136,7 +141,7 @@ public class JasperCSVdata {
      private static MediaTray getTray(String trayname){
  
          /*
-          * Trayを選ぶ処理
+          * Trayを選ぶ処理 HashMapの方がいいんだろうな。
           */
          switch (trayname){
              case "MediaTray.BOTTOM":
